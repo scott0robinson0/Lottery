@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace LotteryClasses
 {
@@ -54,30 +55,14 @@ namespace LotteryClasses
 
         public static bool HasDuplicate(this int[] array)
         {
-            foreach (int element in array)
+            for (int i = 0; i < array.Length - 1; i++)
             {
-                foreach (int innerElement in array)
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (element == innerElement)
+                    if (array[i] == array[j])
                     {
                         return true;
                     }
-                }
-            }
-            return false;
-        }
-        public static bool HasDuplicate2(this int[] array)
-        {
-            List<int> array2 = new List<int>();
-            foreach (int element in array)
-            {
-                if (array2.Contains(element))
-                {
-                    return true;
-                }
-                else
-                {
-                    array2.Add(element);
                 }
             }
             return false;

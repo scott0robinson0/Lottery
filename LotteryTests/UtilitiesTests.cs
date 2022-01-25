@@ -39,12 +39,51 @@ namespace LotteryTests
         }
 
         [TestMethod]
-        public void TestHasDuplicate()
+        public void TestHasDuplicate1()
         {
             int[] array = { 21, 9, 38, 7, 9, 36 };
 
-            Assert.IsTrue(array.HasDuplicate2());
             Assert.IsTrue(array.HasDuplicate());
+        }
+
+        [TestMethod]
+        public void TestHasDuplicate2()
+        {
+            int[] array = { 9, 9, 38, 7, 8, 36 };
+
+            Assert.IsTrue(array.HasDuplicate());
+        }
+
+        [TestMethod]
+        public void TestHasDuplicate3()
+        {
+            int[] array = { 9, 5, 38, 7, 36, 36 };
+
+            Assert.IsTrue(array.HasDuplicate());
+        }
+
+        [TestMethod]
+        public void TestDoesntHaveDuplicate1()
+        {
+            int[] array = { 21, 8, 38, 7, 9, 36 };
+
+            Assert.IsFalse(array.HasDuplicate());
+        }
+
+        [TestMethod]
+        public void TestHasDuplicate4()
+        {
+            int[] array = { 9, 9 };
+
+            Assert.IsTrue(array.HasDuplicate());
+        }
+
+        [TestMethod]
+        public void TestDoesntHaveDuplicate2()
+        {
+            int[] array = { 21, 8 };
+
+            Assert.IsFalse(array.HasDuplicate());
         }
     }
 }
