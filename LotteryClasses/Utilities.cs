@@ -51,5 +51,36 @@ namespace LotteryClasses
             while (!sorted);
             return array;
         }
+
+        public static bool HasDuplicate(this int[] array)
+        {
+            foreach (int element in array)
+            {
+                foreach (int innerElement in array)
+                {
+                    if (element == innerElement)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public static bool HasDuplicate2(this int[] array)
+        {
+            List<int> array2 = new List<int>();
+            foreach (int element in array)
+            {
+                if (array2.Contains(element))
+                {
+                    return true;
+                }
+                else
+                {
+                    array2.Add(element);
+                }
+            }
+            return false;
+        }
     }
 }

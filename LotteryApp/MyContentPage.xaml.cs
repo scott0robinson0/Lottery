@@ -35,10 +35,7 @@ namespace LotteryApp
             tbPhone.Text = App.customer.Phone;
             tbEmail.Text = App.customer.Email;
 
-            Utilities util = new Utilities();
-
-            App.euro.Numbers = util.sortLowestToHighest(App.euro.Numbers);
-            App.euro.Numbers[0] = 5;
+            App.euro.Numbers = App.euro.Numbers.SortLowestToHighest();
 
             tbNum1.Text = App.euro.Numbers[0].ToString();
             tbNum2.Text = App.euro.Numbers[1].ToString();

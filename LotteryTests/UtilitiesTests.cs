@@ -37,5 +37,14 @@ namespace LotteryTests
                 count++;
             }
         }
+
+        [TestMethod]
+        public void TestHasDuplicate()
+        {
+            int[] array = { 21, 9, 38, 7, 9, 36 };
+
+            Assert.IsTrue(array.HasDuplicate2());
+            Assert.IsTrue(array.HasDuplicate());
+        }
     }
 }
