@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="LotteryApp.MyContentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LotteryApp"
+    xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Tickets" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="75"/>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="tbName" Text="" Margin="10"/>
+                <TextBlock x:Name="tbPhone" Text="" Margin="10"/>
+                <TextBlock x:Name="tbEmail" Text="" Margin="10"/>
+            </StackPanel>
+            <TextBlock Text="Euro"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="tbNum1" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum2" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum3" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum4" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum5" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum6" Text="" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="tbLuc1" Text="" Margin="10"/>
+                <TextBlock x:Name="tbLuc2" Text="" Margin="10"/>
+            </StackPanel>
+            <TextBlock Text="Lotto"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="tbNum21" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum22" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum23" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum24" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum25" Text="" Margin="10"/>
+                <TextBlock x:Name="tbNum26" Text="" Margin="10"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="tbBon" Text="" Margin="10"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>

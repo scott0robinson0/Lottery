@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="LotteryApp.CustPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LotteryApp"
+    xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Account" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="75"/>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBox x:Name="txtName" PlaceholderText="Full Name" Margin="10" ui:TextBoxExtensions.ValidationType="Characters" ui:TextBoxExtensions.ValidationMode="Dynamic"/>
+            <TextBox x:Name="txtPhone" PlaceholderText="Phone" Margin="10" ui:TextBoxExtensions.ValidationType="PhoneNumber" ui:TextBoxExtensions.ValidationMode="Forced"/>
+            <TextBox x:Name="txtEmail" PlaceholderText="Email" Margin="10" ui:TextBoxExtensions.ValidationType="Email" ui:TextBoxExtensions.ValidationMode="Forced"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+                <Button x:Name="btnLogin" Content="Login" Margin="10" Click="btnLogin_Click"/>
+                <!--<Button x:Name="btnRegister" Content="Register" Margin="10"/>-->
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
