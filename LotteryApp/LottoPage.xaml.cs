@@ -65,7 +65,7 @@ namespace LotteryApp
             {
                 await new MessageDialog("Duplicate numbers are not allowed.", "Retry").ShowAsync();
                 Array.Clear(App.lotto.Numbers, 0, App.lotto.Numbers.Length);
-                App.lotto.BonusBall = 0;
+                App.lotto.BonusBall = 1;
             }
         }
     }

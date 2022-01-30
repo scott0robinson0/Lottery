@@ -46,7 +46,6 @@ namespace LotteryApp
 
         private async void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            //if numbers are entered
             App.euro.customer = App.customer;
 
             App.euro.Numbers[0] = Int16.Parse(txtNum1.Text);
@@ -65,8 +64,7 @@ namespace LotteryApp
                 await new MessageDialog("Duplicate numbers are not allowed.", "Retry").ShowAsync();
                 Array.Clear(App.euro.Numbers, 0, App.euro.Numbers.Length);
                 Array.Clear(App.euro.LuckyStar, 0, App.euro.LuckyStar.Length);
-            }
-            //else error or use random numbers            
+            }            
         }
 
     }
