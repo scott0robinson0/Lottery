@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using LotteryClasses;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,24 +31,20 @@ namespace LotteryApp
 
         private void btnRandomNums_Click(object sender, RoutedEventArgs e)
         {
+            //int[] nums = new int[6];
             int[] nums = new int[6];
-            nums = Lotto.RandomNum();
+            nums = Lotto.RandomNum(7);
             txtNum1.Text = nums[0].ToString();
             txtNum2.Text = nums[1].ToString();
             txtNum3.Text = nums[2].ToString();
             txtNum4.Text = nums[3].ToString();
             txtNum5.Text = nums[4].ToString();
             txtNum6.Text = nums[5].ToString();
+            txtBon.Text = nums[6].ToString();
+
         }
 
-        private void btnRandomBon_Click(object sender, RoutedEventArgs e)
-        {
-            int[] nums = new int[6];
-            nums = Euro.RandomNum();
-            txtBon.Text = nums[0].ToString();
-        }
-
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        private async void btnCreate_Click(object sender, RoutedEventArgs e)
         {
             App.lotto.customer = App.customer;
 
@@ -60,6 +57,16 @@ namespace LotteryApp
 
             App.lotto.BonusBall = Int16.Parse(txtBon.Text);
 
+            int[] combined = new int[7];
+            App.lotto.Numbers.CopyTo(combined, 0);
+            combined[6] = App.lotto.BonusBall;
+
+            if (combined.HasDuplicate())
+            {
+                await new MessageDialog("Duplicate numbers are not allowed.", "Retry").ShowAsync();
+                Array.Clear(App.lotto.Numbers, 0, App.lotto.Numbers.Length);
+                App.lotto.BonusBall = 0;
+            }
         }
     }
 }

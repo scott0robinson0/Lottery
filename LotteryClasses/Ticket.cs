@@ -12,6 +12,7 @@ namespace LotteryClasses
         public Customer customer { get; set; }   // property
 
         private int[] _numbers = new int[6];      // field
+
         public int[] Numbers
         {
             get { return _numbers; }
@@ -43,18 +44,22 @@ namespace LotteryClasses
 
         public override abstract string ToString(); // This overrides the standard String ToString() class.
 
-        public static int[] RandomNum()
+        public static int[] RandomNum(int numsLength)
         {
             Random rand = new Random();
 
             int min = 1;
             int max = 50;
 
-            int[] randNums = new int[7];
-            for (int i = 0; i < randNums.Length; i++)
+            int[] randNums = new int[numsLength];
+            do
             {
-                randNums[i] = rand.Next(min, max);
+                for (int i = 0; i < randNums.Length; i++)
+                {
+                    randNums[i] = rand.Next(min, max);
+                }
             }
+            while (randNums.HasDuplicate());
             return randNums;
         }
     }

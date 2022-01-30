@@ -30,14 +30,16 @@
                 <TextBox x:Name="txtNum4" PlaceholderText="4" Margin="10" ui:TextBoxExtensions.ValidationType="Number" ui:TextBoxExtensions.ValidationMode="Dynamic"/>
                 <TextBox x:Name="txtNum5" PlaceholderText="5" Margin="10" ui:TextBoxExtensions.ValidationType="Number" ui:TextBoxExtensions.ValidationMode="Dynamic"/>
                 <TextBox x:Name="txtNum6" PlaceholderText="6" Margin="10" ui:TextBoxExtensions.ValidationType="Number" ui:TextBoxExtensions.ValidationMode="Dynamic"/>
-                <Button x:Name="btnRandomNums" Content="Generate" Margin="10" HorizontalAlignment="Center" Click="btnRandomNums_Click"/>
+                
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBox x:Name="txtLuc1" PlaceholderText="1" Margin="10" ui:TextBoxExtensions.ValidationType="Number" ui:TextBoxExtensions.ValidationMode="Dynamic"/>
                 <TextBox x:Name="txtLuc2" PlaceholderText="2" Margin="10" ui:TextBoxExtensions.ValidationType="Number" ui:TextBoxExtensions.ValidationMode="Dynamic"/>
-                <Button x:Name="btnRandomLuc" Content="Generate" Margin="10" HorizontalAlignment="Center" Click="btnRandomLuc_Click"/>
             </StackPanel>
-            <Button x:Name="btnCreate" Content="Create" Margin="10" HorizontalAlignment="Center" Click="btnCreate_Click"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnRandomNums" Content="Randomise" Margin="10" HorizontalAlignment="Center" Click="btnRandomNums_Click"/>
+                <Button x:Name="btnCreate" Content="Create" Margin="10" HorizontalAlignment="Center" Click="btnCreate_Click"/>            
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

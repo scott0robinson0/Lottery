@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using LotteryClasses;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,7 +32,7 @@ namespace LotteryApp
         private void btnRandomNums_Click(object sender, RoutedEventArgs e)
         {
             int[] nums = new int[6];
-            nums = Euro.RandomNum();
+            nums = Euro.RandomNum(9);
 
             txtNum1.Text = nums[0].ToString();
             txtNum2.Text = nums[1].ToString();
@@ -39,9 +40,11 @@ namespace LotteryApp
             txtNum4.Text = nums[3].ToString();
             txtNum5.Text = nums[4].ToString();
             txtNum6.Text = nums[5].ToString();
+            txtLuc1.Text = nums[6].ToString();
+            txtLuc2.Text = nums[7].ToString();
         }
 
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        private async void btnCreate_Click(object sender, RoutedEventArgs e)
         {
             //if numbers are entered
             App.euro.customer = App.customer;
@@ -55,15 +58,16 @@ namespace LotteryApp
 
             App.euro.LuckyStar[0] = Int16.Parse(txtLuc1.Text);
             App.euro.LuckyStar[1] = Int16.Parse(txtLuc2.Text);
-            //else error or use random numbers
+
+            int[] combined = App.euro.Numbers.Concat(App.euro.LuckyStar).ToArray();
+            if (combined.HasDuplicate())
+            {
+                await new MessageDialog("Duplicate numbers are not allowed.", "Retry").ShowAsync();
+                Array.Clear(App.euro.Numbers, 0, App.euro.Numbers.Length);
+                Array.Clear(App.euro.LuckyStar, 0, App.euro.LuckyStar.Length);
+            }
+            //else error or use random numbers            
         }
 
-        private void btnRandomLuc_Click(object sender, RoutedEventArgs e)
-        {
-            int[] nums = new int[6];
-            nums = Euro.RandomNum();
-            txtLuc1.Text = nums[0].ToString();
-            txtLuc2.Text = nums[1].ToString();
-        }
     }
 }

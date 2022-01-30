@@ -35,7 +35,8 @@ namespace LotteryApp
             tbPhone.Text = App.customer.Phone;
             tbEmail.Text = App.customer.Email;
 
-            App.euro.Numbers = App.euro.Numbers.SortLowestToHighest();
+            App.euro.Numbers = App.euro.Numbers.SortHighestToLowest();
+            App.euro.LuckyStar = App.euro.LuckyStar.SortHighestToLowest();
 
             tbNum1.Text = App.euro.Numbers[0].ToString();
             tbNum2.Text = App.euro.Numbers[1].ToString();
@@ -46,6 +47,8 @@ namespace LotteryApp
 
             tbLuc1.Text = App.euro.LuckyStar[0].ToString();
             tbLuc2.Text = App.euro.LuckyStar[1].ToString();
+
+            App.lotto.Numbers = App.lotto.Numbers.SortLowestToHighest();
 
             tbNum21.Text = App.lotto.Numbers[0].ToString();
             tbNum22.Text = App.lotto.Numbers[1].ToString();

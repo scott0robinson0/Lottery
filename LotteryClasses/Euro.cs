@@ -9,6 +9,7 @@ namespace LotteryClasses
     public class Euro : Ticket
     {
         public int[] LuckyStar { get; set; } = new int[2];
+
         public string Country { get; set; }
 
         public override string ToString() // This overrides the ToString() class in Ticket.
